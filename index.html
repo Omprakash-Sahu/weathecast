@@ -36,17 +36,17 @@
             </div>
 
             <div class="current-temp">
-                <img src="/assets/weather_icon.svg" alt="weather_icon" class="current-temp__weather-icon">
+                <img id="weather-icon" src="/assets/weather_icon.svg" alt="weather_icon" class="current-temp__weather-icon">
                 <div class="temp-value">
-                    <p class="temp-value__figure">10</p>
+                    <p id="temp-value__figure">10</p>
                     <div class="temp-value__degree-symbol"></div>
                     <p class="temp-value__unit">C</p>
                 </div>
             </div>
 
             <div class="current-weather__location">
-                <p class="current-weather__loc-name">New Delhi, India</p>
-                <p class="current-weather__loc-feel">Clear sky. Light breeze</p>
+                <p id="current-weather__loc-name">New Delhi, India</p>
+                <p id="current-weather__loc-feel">Clear sky. Light breeze</p>
             </div>
 
             <div class="current-weather__details">
@@ -56,7 +56,7 @@
                         <img src="/assets/wind.svg" alt="Wind icon" class="parameter__icon">
                         <p class="parameter__name">Wind</p>
                     </div>
-                    <p class="parameter__value">1 m/s NNE</p>
+                    <p class="parameter__value" id="wind-speed">1 m/s NNE</p>
                 </div>
                 
                 <div class="parameter">
@@ -64,7 +64,7 @@
                         <img src="/assets/humidity-low.svg" alt="Humidity icon" class="parameter__icon">
                         <p class="parameter__name">Humidity</p>
                     </div>
-                    <p class="parameter__value">74%</p>
+                    <p class="parameter__value" id="humidity">74%</p>
                 </div>
                 
                 <div class="parameter">
@@ -72,7 +72,7 @@
                         <img src="/assets/visibility-outline.svg" alt="Visibility icon" class="parameter__icon">
                         <p class="parameter__name">Visibility</p>
                     </div>
-                    <p class="parameter__value">10km</p>
+                    <p class="parameter__value" id="visibility">10km</p>
                 </div>
                 
                 <div class="parameter">
@@ -80,7 +80,7 @@
                         <img src="/assets/pressure.svg" alt="Pressure icon" class="parameter__icon">
                         <p class="parameter__name">Pressure</p>
                     </div>
-                    <p class="parameter__value">1005 hPa</p>
+                    <p class="parameter__value" id="pressure">1005 hPa</p>
                 </div>
 
             </div>
@@ -92,5 +92,8 @@
     <footer>
         <!-- For attribution to OpenWeatherMap -->
     </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
