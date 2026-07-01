@@ -59,6 +59,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .current-weather {
@@ -97,11 +98,6 @@ main {
 .current-temp {
     display: flex;
     margin-top: 20px;
-}
-
-.current-temp__weather-icon {
-    position: relative;
-    left: 10px;
 }
 
 .temp-value {

@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatheCast - Weather forecasting website</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="forecast.css">
 </head>
 <body>
     <header class="header">
@@ -36,7 +37,7 @@
             </div>
 
             <div class="current-temp">
-                <img id="weather-icon" src="/assets/weather_icon.svg" alt="weather_icon" class="current-temp__weather-icon">
+                <img id="weather-icon" src="/assets/weather_icon_gradient.svg" alt="weather_icon" class="current-temp__weather-icon">
                 <div class="temp-value">
                     <p id="temp-value__figure">10</p>
                     <div class="temp-value__degree-symbol"></div>
@@ -86,7 +87,38 @@
             </div>
         </section>
 
+        <section class="forecast">
+            <h3>5 day / 3 hour forecast</h3>
 
+            <div class="forecast__days">
+               <!-- Just for reference. It will be dynamically generated.
+                <div class="forecast__day-card">
+
+                    <div class="forecast__day-overview border-bottom-none">
+                        <p class="forecast__day-date">Saturday, June 27</p>
+                    
+                        <button class="forecast__day-expand-btn" type="button">
+                            <img src="assets/dropdown.svg" alt="Show hourly forecast">
+                        </button>
+                    </div>
+                    
+                    <div class="forecast__hourly-details">
+                        <div class="forecast__hour-card">
+                            <p class="forecast__hour">12 AM</p>
+                            
+                            <p class="forecast__hour-description">Clear sky</p>
+                            
+                            <div class="forecast__hour-weather">
+                                <img class="forecast__hour-weather-icon" src="/assets/weather-icon.png" alt="Weather icon">
+                                <p class="forecast__hour-temp">25 &deg;C</p>    
+                            </div>                        
+                        </div>       
+                    </div> 
+
+                </div>
+                -->
+            </div>
+        </section>
     </main>
 
     <footer>

@@ -1,0 +1,116 @@
+.forecast {
+    width: 100%;
+    max-width: 315px;
+    margin-top: 40px;
+}
+
+.forecast__days {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 10px;
+}
+
+/* -------------------------------------- */
+
+.forecast__day-card {
+    background-color: #d4c9fe;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+}
+
+.forecast__day-overview {
+    display: flex;
+    padding: 2px 14px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: none;
+}
+
+.forecast__day-date {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.forecast__day-expand-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.forecast__day-expand-btn img {
+    width: 14px;
+    height: auto;
+    transition: transform 0.2s ease;
+}
+
+/* -------------------------------------- */
+
+.forecast__hourly-details {
+    width: 100%;
+    max-width: 280px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.forecast__hour-card {
+    display: flex;
+    background-color: #E9E9E9;
+    border-radius: 6px;
+    padding: 2px 14px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.forecast__hour {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.forecast__hour-description {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.forecast__hour-weather {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+
+.forecast__hour-weather-icon {
+    height: 40px;
+    width: auto;
+}
+
+.forecast__hour-temp {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.forecast__day-card p {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+.forecast__hourly-details--visible {
+    display: flex;
+}
+
+.forecast__day-overview--border-bottom {
+    border-bottom: 1px solid gray;
+}
+
+.forecast__day-expand-btn--expanded {
+    transform: rotate(180deg);
+}

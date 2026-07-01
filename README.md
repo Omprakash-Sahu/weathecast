@@ -6,6 +6,11 @@ A website to get current weather data and 5 day / 3 hour forecast.
 
 HTML5, CSS3, JavaScript
 
+## APIs Used
+
+- OpenWeatherMap Current Weather API
+- OpenWeatherMap 5 day / 3 hour Forecast API
+
 ## UI Design approach
 
 Mobile-first design, 360px base breakpoint.
