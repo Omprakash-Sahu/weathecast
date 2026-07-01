@@ -17,9 +17,9 @@ body {
 .header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 75px;
     padding: 20px;
-    align-items: center;
 }
 
 .header__logo {
@@ -30,6 +30,7 @@ body {
 
 .header__search {
     display: flex;
+    position: relative;
     gap: 5px;
 }
 
@@ -52,6 +53,36 @@ body {
     display: block;
 }
 
+.search-results {
+    position: absolute;
+    background-color: #d4c9fe;
+    top: 100%;
+    right: 10px;
+    margin-top: 10px;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 6px;
+}
+
+.search-results--visible {
+    display: flex;
+}
+
+.search-results__item {
+    font-size: 13px;
+    font-weight: 500;
+    background-color: whitesmoke;
+    padding: 10px;
+    margin: 0px 14px;
+    border-radius: 6px;
+    min-width: 240px;
+    cursor: pointer;
+}
+
 /* main styles */
 
 main {
@@ -59,7 +90,7 @@ main {
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
 }
 
 .current-weather {
@@ -179,3 +210,19 @@ main {
     font-size: 10px;
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.openweather-logo {
+    height: 30px;
+    width: auto;
+}
+
+.attribution {
+    text-decoration: none;
+    color: #2C2C2C;
+    font-size: 12px;
+}   

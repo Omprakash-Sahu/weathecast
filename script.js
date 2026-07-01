@@ -1,6 +1,3 @@
-let lat = 28.61;
-let lon = 77.21;
-
 function getTime(timeDayDate) {
     const timeOptions = {
         hour: '2-digit',
@@ -105,8 +102,6 @@ async function fetchCurrentWeather(lat, lon) {
     }
 }
 
-fetchCurrentWeather(lat, lon);
-
 // -----------------------------------------------------------------
 
 function getForecastDayDate(dateTimeString) {
@@ -128,8 +123,9 @@ function getForecastTime(dateTimeString) {
 
 function renderForecastData(data) {
 
-    let prevDay = "";
     const forecastDaysSection = document.querySelector(".forecast__days");
+    forecastDaysSection.replaceChildren();
+    let prevDay = "";
     let dayCard;
     let hourlyDetails;
 
@@ -210,12 +206,9 @@ async function fetchForecastData(lat, lon) {
     }
 }
 
-fetchForecastData(lat, lon);
-
 const forecastDaysSection = document.querySelector(".forecast__days");
 
 forecastDaysSection.addEventListener('click', (e) => {
-    console.log("click event fired.");
     
     const dropdown = e.target.closest('.forecast__day-expand-btn');
     if(!dropdown) return;
@@ -231,3 +224,93 @@ forecastDaysSection.addEventListener('click', (e) => {
 
 // -----------------------------------------------------------------
 
+const searchInputBox = document.querySelector('.header__search-input');
+const searchResults = document.querySelector('.search-results');
+
+function renderLocationData(data) {
+
+    if (!searchInputBox.value) return;
+
+    searchResults.replaceChildren();
+
+    for (let i = 0; i < data.length; i++) {
+        const location = data[i];
+        const searchResultItem = document.createElement('li');
+        searchResultItem.classList.add('search-results__item');
+        searchResultItem.textContent = data[i].name + (data[i].state ? (", " + data[i].state) : '');
+        searchResultItem.dataset.lat = data[i].lat;
+        searchResultItem.dataset.lon = data[i].lon;
+        searchResults.appendChild(searchResultItem);       
+    }
+
+    searchResults.classList.add('search-results--visible');
+}
+
+async function fetchLocations(loc) {
+    try {
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=5&appid=${API_KEY}`)
+        if (!response.ok) {
+            throw new Error("Failed to fetch location data.");
+        }
+        const data = await response.json();
+        renderLocationData(data);
+    } catch (error) {
+        console.log(error);        
+    }
+}
+
+let timer;
+
+searchInputBox.addEventListener('input', (e) => {
+    e.preventDefault();
+    clearTimeout(timer);
+    if (e.target.value.trim() === '') {
+        const searchResults = document.querySelector('.search-results');
+        searchResults.classList.remove('search-results--visible');
+    }
+    else {
+        timer = setTimeout(() => {
+            fetchLocations(searchInputBox.value);
+        }, 300);
+    }
+})
+
+searchResults.addEventListener('click', (e) => {
+    const searchResultItem = e.target.closest('.search-results__item');
+    if(!searchResultItem) return;
+
+    fetchCurrentWeather(searchResultItem.dataset.lat, searchResultItem.dataset.lon);
+    fetchForecastData(searchResultItem.dataset.lat, searchResultItem.dataset.lon);
+    localStorage.setItem('lat', searchResultItem.dataset.lat);
+    localStorage.setItem('lon', searchResultItem.dataset.lon);
+    searchResults.replaceChildren();
+    searchResults.classList.remove('search-results--visible');
+    searchInputBox.value = '';
+})
+
+function initialWeatherFetch() {
+    let lat = localStorage.getItem('lat');
+    let lon = localStorage.getItem('lon');
+
+    if (lat && lon) {
+        fetchCurrentWeather(lat, lon);
+        fetchForecastData(lat, lon);
+    } else {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+                localStorage.setItem('lat', latitude);
+                localStorage.setItem('lon', longitude);
+                fetchCurrentWeather(latitude, longitude);
+                fetchForecastData(latitude, longitude);
+            },
+            (error) => {
+                fetchCurrentWeather(28.63, 77.22);
+                fetchForecastData(28.63, 77.22);
+            }
+        );
+    }
+}
+
+initialWeatherFetch();

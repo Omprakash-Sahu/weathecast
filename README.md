@@ -10,6 +10,7 @@ HTML5, CSS3, JavaScript
 
 - OpenWeatherMap Current Weather API
 - OpenWeatherMap 5 day / 3 hour Forecast API
+- OpenWeatherMap Geocoding API
 
 ## UI Design approach
 

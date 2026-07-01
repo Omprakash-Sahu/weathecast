@@ -18,36 +18,45 @@
 
         <div class="header__search">
             <input class="header__search-input" type="text" placeholder="Search City">
-            <button class="header__search-btn">
+            <!-- <button class="header__search-btn">
                 <img src="/assets/search_icon.svg" alt="Search icon">
-            </button>
+            </button> -->
+
+            <ul class="search-results">
+                <!-- <li class="search-results__item">New Delhi</li>
+                <li class="search-results__item">Delhi</li>
+                <li class="search-results__item">Delhi</li>
+                <li class="search-results__item">Delhi</li>
+                <li class="search-results__item">Village of Delhi</li> -->
+            </ul>
+            
         </div>
     </header>
 
     <main>
         <section class="current-weather">
             <div class="current-weather__time">
-                <p id="hr-min">06:00</p>
-                <p id="am-pm">AM</p>
+                <p id="hr-min"><!--06:00--></p>
+                <p id="am-pm"><!--AM--></p>
             </div>
 
             <div class="current-weather__date">
-                <p id="day">Thursday,</p>
-                <p id="dd-mm-yy">11 January 2024</p>
+                <p id="day"></p>
+                <p id="dd-mm-yy"></p>
             </div>
-
+  
             <div class="current-temp">
-                <img id="weather-icon" src="/assets/weather_icon_gradient.svg" alt="weather_icon" class="current-temp__weather-icon">
+                <img id="weather-icon" alt="weather_icon" class="current-temp__weather-icon">
                 <div class="temp-value">
-                    <p id="temp-value__figure">10</p>
+                    <p id="temp-value__figure"></p>
                     <div class="temp-value__degree-symbol"></div>
                     <p class="temp-value__unit">C</p>
                 </div>
             </div>
 
             <div class="current-weather__location">
-                <p id="current-weather__loc-name">New Delhi, India</p>
-                <p id="current-weather__loc-feel">Clear sky. Light breeze</p>
+                <p id="current-weather__loc-name"></p>
+                <p id="current-weather__loc-feel"></p>
             </div>
 
             <div class="current-weather__details">
@@ -57,7 +66,7 @@
                         <img src="/assets/wind.svg" alt="Wind icon" class="parameter__icon">
                         <p class="parameter__name">Wind</p>
                     </div>
-                    <p class="parameter__value" id="wind-speed">1 m/s NNE</p>
+                    <p class="parameter__value" id="wind-speed"></p>
                 </div>
                 
                 <div class="parameter">
@@ -65,7 +74,7 @@
                         <img src="/assets/humidity-low.svg" alt="Humidity icon" class="parameter__icon">
                         <p class="parameter__name">Humidity</p>
                     </div>
-                    <p class="parameter__value" id="humidity">74%</p>
+                    <p class="parameter__value" id="humidity"></p>
                 </div>
                 
                 <div class="parameter">
@@ -73,7 +82,7 @@
                         <img src="/assets/visibility-outline.svg" alt="Visibility icon" class="parameter__icon">
                         <p class="parameter__name">Visibility</p>
                     </div>
-                    <p class="parameter__value" id="visibility">10km</p>
+                    <p class="parameter__value" id="visibility"></p>
                 </div>
                 
                 <div class="parameter">
@@ -81,7 +90,7 @@
                         <img src="/assets/pressure.svg" alt="Pressure icon" class="parameter__icon">
                         <p class="parameter__name">Pressure</p>
                     </div>
-                    <p class="parameter__value" id="pressure">1005 hPa</p>
+                    <p class="parameter__value" id="pressure"></p>
                 </div>
 
             </div>
@@ -122,7 +131,8 @@
     </main>
 
     <footer>
-        <!-- For attribution to OpenWeatherMap -->
+        <img src="assets/OpenWeather-Master-Logo RGB.png" alt="OpenWeather Logo" class="openweather-logo">
+        <a href="https://openweathermap.org/" class="attributio">Weather data provided by OpenWeather</a>
     </footer>
 
     <script src="config.js"></script>
