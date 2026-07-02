@@ -1,3 +1,8 @@
+function showError() {
+    const errorCard = document.querySelector('.show-error');
+    errorCard.classList.add('show-error--visible');
+}
+
 function getTime(timeDayDate) {
     const timeOptions = {
         hour: '2-digit',
@@ -98,7 +103,7 @@ async function fetchCurrentWeather(lat, lon) {
         const data = await response.json();
         renderCurrentWeather(data);
     } catch (error) {
-        console.log(error);
+        showError();
     }
 }
 
@@ -202,7 +207,7 @@ async function fetchForecastData(lat, lon) {
         const data = await response.json();
         renderForecastData(data);
     } catch (error) {
-        console.log(error)
+        showError();
     }
 }
 
@@ -227,11 +232,28 @@ forecastDaysSection.addEventListener('click', (e) => {
 const searchInputBox = document.querySelector('.header__search-input');
 const searchResults = document.querySelector('.search-results');
 
+function showSearchError(errorStr) {
+    searchResults.replaceChildren();
+    searchResults.classList.remove('search-results--visible');
+    const searchResultItem = document.createElement('li');
+    searchResultItem.classList.add('search-results__item');
+    searchResultItem.classList.add('search-results__item--not-found');
+    searchResultItem.textContent = errorStr;
+    searchResults.appendChild(searchResultItem);       
+    searchResults.classList.add('search-results--visible');
+}
+
 function renderLocationData(data) {
 
     if (!searchInputBox.value) return;
 
     searchResults.replaceChildren();
+    searchResults.classList.remove('search-results--visible');
+
+    if(data.length === 0) {
+        showSearchError("No locations found");
+        return;
+    }
 
     for (let i = 0; i < data.length; i++) {
         const location = data[i];
@@ -248,14 +270,15 @@ function renderLocationData(data) {
 
 async function fetchLocations(loc) {
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=5&appid=${API_KEY}`)
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${loc}&limit=5&appid=${API_KEY}`)
         if (!response.ok) {
             throw new Error("Failed to fetch location data.");
         }
         const data = await response.json();
         renderLocationData(data);
     } catch (error) {
-        console.log(error);        
+        console.log(error);    
+        showSearchError("Check your connection & try again");   
     }
 }
 

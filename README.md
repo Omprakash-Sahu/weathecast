@@ -1,6 +1,6 @@
 # WeatheCast - Weather forecasting website
 
-A website to get current weather data and 5 day / 3 hour forecast.
+A website to get current weather data and 5 day / 3 hour forecast with error handling and geolocation support.
 
 ## Technologies Used
 

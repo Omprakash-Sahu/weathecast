@@ -83,6 +83,12 @@ body {
     cursor: pointer;
 }
 
+.search-results__item--not-found {
+    background-color: rgb(255, 83, 83);
+    color: white;
+    text-align: center;
+}
+
 /* main styles */
 
 main {

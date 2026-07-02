@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="forecast.css">
+    <link rel="stylesheet" href="error.css">
 </head>
 <body>
     <header class="header">
@@ -129,11 +130,18 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
         <img src="assets/OpenWeather-Master-Logo RGB.png" alt="OpenWeather Logo" class="openweather-logo">
         <a href="https://openweathermap.org/" class="attribution">Weather data provided by OpenWeather</a>
     </footer>
+    
+    <section class="show-error">
+        <div class="show-error__card">
+            <p class="show-error__message">Something went wrong. Please check your connection and try again.</p>
+        </div>
+        <a href="http://127.0.0.1:5500/index.html" class="show-error__ok">Ok</a>
+    </section>
 
     <script src="config.js"></script>
     <script src="script.js"></script>
