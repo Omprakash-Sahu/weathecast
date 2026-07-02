@@ -158,7 +158,7 @@ function renderForecastData(data) {
             dayOverview.appendChild(dayExpandBtn);
             
             const dropdownIcon = document.createElement('img');
-            dropdownIcon.src = "/assets/dropdown.svg";
+            dropdownIcon.src = "./assets/dropdown.svg";
             dayExpandBtn.appendChild(dropdownIcon);
             
             hourlyDetails = document.createElement('div');
