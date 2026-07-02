@@ -12,6 +12,10 @@ HTML5, CSS3, JavaScript
 - OpenWeatherMap 5 day / 3 hour Forecast API
 - OpenWeatherMap Geocoding API
 
+## API Key
+
+This project uses a public OpenWeatherMap free tier API key with rate limits. To use your own key, replace the value in `config.js`.
+
 ## UI Design approach
 
 Mobile-first design, 360px base breakpoint.
