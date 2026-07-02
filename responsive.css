@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+    main {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 60px 40px;
+    }
+    .current-weather__details {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .forecast {
+        max-width: 100%;
+    }
+}
