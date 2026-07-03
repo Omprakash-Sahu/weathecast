@@ -1,5 +1,7 @@
 # WeatheCast - Weather forecasting website
 
+**Live:** [WeatheCast](https://omprakash-sahu.github.io/weathecast/)
+
 A mobile-first weather forecasting website with current weather, next 5-day / 3-hour forecast, city search. geolocation support and error handling.
 
 ## Technologies Used
